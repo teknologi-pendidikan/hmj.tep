@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "no-use-before-define": "error"
+  }
+}

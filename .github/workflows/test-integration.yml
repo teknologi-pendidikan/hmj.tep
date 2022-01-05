@@ -1,0 +1,37 @@
+name: Integration Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-unit:
+    name: Integration Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Setup NodeJS Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+
+      - name: 💻 TypeScript Check
+        run: yarn run tsc
+
+      - name: 💻 Lint
+        run: yarn lint:full
+
+      - name: 💻 Build Projects
+        run: yarn build
+
+      - name: 💻 Test
+        run: yarn e2e:headless

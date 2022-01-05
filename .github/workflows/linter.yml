@@ -1,0 +1,31 @@
+name: Lint Code Base
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-unit:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Setup NodeJS Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+
+      - name: Linting Codebase
+        uses: docker://ghcr.io/github/super-linter:slim-v4
+        env:
+          LINTER_RULES_PATH: /
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IGNORE_GITIGNORED_FILES: TRUE
+          VALIDATE_JAVASCRIPT_ES: TRUE
