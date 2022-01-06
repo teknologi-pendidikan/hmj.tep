@@ -2,7 +2,7 @@
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval';
   img-src 'self' blob: data: https:;
   style-src 'self' 'unsafe-inline';
   connect-src 'self';
