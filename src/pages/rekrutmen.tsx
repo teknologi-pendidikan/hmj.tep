@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Footer from "components/footer";
 import Header from "components/header";
+import SEO from "components/seo";
 
 const Rekrutmen: NextPage = () => {
   const rand: string = Math.random().toString(16).substr(2, 8); // 6de5ccda
@@ -45,8 +46,16 @@ const Rekrutmen: NextPage = () => {
       )}%2F${angkatan}%0D%0A%0D%0A${rand}`
     );
   };
+
+  const selayangpandang =
+    "Telah selesai satu masa kepengurusan HMJ TEP 2021 yang telah sangat membekas di jurusan ini. Dengan ini maka dibukanya lembaran baru untuk masa kepengurusan HMJ TEP 2022.";
+
   return (
     <>
+      <SEO
+        title="Rekrutmen Pengurus HMJ TEP UM 2022"
+        description={selayangpandang}
+      />
       <Header title="Rekrutmen Pengurus" />
       <div className="min-h-full flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl w-full space-y-8">
