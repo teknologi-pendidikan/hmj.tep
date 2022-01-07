@@ -1,6 +1,5 @@
-import Link from "next/link";
-
-export default function Header({ title }) {
+// @ts-expect-error: Title are string make sureable
+export default function Header({ title }): JSX.Element {
   return (
     <>
       <header
