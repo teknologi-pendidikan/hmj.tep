@@ -1,12 +1,41 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import Image from "next/image";
+import Footer from "components/footer";
+import Header from "components/header";
 
 const Rekrutmen: NextPage = () => {
+  function stringtourl(str: string) {
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(
+      /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g,
+      "+"
+    );
+    str = str.replace(/-+-/g, "+"); //thay thế 2- thành 1-
+    str = str.replace(/^\-+|\-+$/g, "");
+    return str;
+  }
   const router = useRouter();
+  const unduhFormulir = async (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    const nim: number = event.target.nim.value;
+    const nama: string = event.target.name.value;
+    router.push(
+      `https://wa.me/6285748250120?text=%2ADAFTAR+HMJ+TEP+UM+2022%2A%0D%0A%0D%0A${nim}%2F${stringtourl(
+        nama
+      )}%2FOFFERING%2FANGKATAN%0D%0A%0D%0Akode-registrasi`
+    );
+  };
   return (
     <>
-      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <Header title="Rekrutmen Pengurus" />
+      <div className="min-h-full flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl w-full space-y-8">
           <div>
             <Image
@@ -43,6 +72,7 @@ const Rekrutmen: NextPage = () => {
             action="https://wa.me/6285748250120"
             method="get"
             target="_blank"
+            onSubmit={unduhFormulir}
           >
             <h2 className="mt-6 text-center text-2xl font-extrabold text-gray-900">
               Unduh Formulir Pendaftaran
@@ -50,18 +80,37 @@ const Rekrutmen: NextPage = () => {
             <div className="shadow-sm">
               <div>
                 <label
-                  htmlFor="email-address"
+                  htmlFor="nim-check"
                   className="text-md font-semibold text-center"
                 >
                   Masukkan NIM
                 </label>
                 <input
-                  id="text"
-                  name="text"
+                  id="nim"
+                  name="nim"
                   type="number"
                   required
                   className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-800 focus:border-blue-800 focus:z-10 sm:text-sm"
                   placeholder="Nomor Induk Mahasiswa"
+                />
+              </div>
+            </div>
+
+            <div className="shadow-sm">
+              <div>
+                <label
+                  htmlFor="nim-check"
+                  className="text-md font-semibold text-center"
+                >
+                  Nama Lengkap
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-800 focus:border-blue-800 focus:z-10 sm:text-sm"
+                  placeholder="Nama Lengkap"
                 />
               </div>
             </div>
@@ -174,6 +223,7 @@ const Rekrutmen: NextPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
