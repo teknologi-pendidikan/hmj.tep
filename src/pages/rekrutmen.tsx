@@ -5,6 +5,8 @@ import Footer from "components/footer";
 import Header from "components/header";
 
 const Rekrutmen: NextPage = () => {
+  const rand: string = Math.random().toString(16).substr(2, 8); // 6de5ccda
+
   function stringtourl(str: string) {
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
     str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
@@ -24,12 +26,14 @@ const Rekrutmen: NextPage = () => {
   const router = useRouter();
   const unduhFormulir = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
+    //@ts-expect-error: Title are string make sureable
     const nim: number = event.target.nim.value;
+    //@ts-expect-error: Title are string make sureable
     const nama: string = event.target.name.value;
     router.push(
       `https://wa.me/6285748250120?text=%2ADAFTAR+HMJ+TEP+UM+2022%2A%0D%0A%0D%0A${nim}%2F${stringtourl(
         nama
-      )}%2FOFFERING%2FANGKATAN%0D%0A%0D%0Akode-registrasi`
+      )}%2FOFFERING%2FANGKATAN%0D%0A%0D%0A${rand}`
     );
   };
   return (
