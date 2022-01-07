@@ -27,13 +27,22 @@ const Rekrutmen: NextPage = () => {
   const unduhFormulir = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     //@ts-expect-error: Title are string make sureable
-    const nim: number = event.target.nim.value;
+    const nim: string = event.target.nim.value;
     //@ts-expect-error: Title are string make sureable
     const nama: string = event.target.name.value;
+
+    let angkatan = "";
+
+    if (nim.slice(0, 2) === "20") {
+      angkatan = "2020";
+    } else if (nim.slice(0, 2) === "21") {
+      angkatan = "2021";
+    }
+
     router.push(
       `https://wa.me/6285748250120?text=%2ADAFTAR+HMJ+TEP+UM+2022%2A%0D%0A%0D%0A${nim}%2F${stringtourl(
         nama
-      )}%2FOFFERING%2FANGKATAN%0D%0A%0D%0A${rand}`
+      )}%2F${angkatan}%0D%0A%0D%0A${rand}`
     );
   };
   return (
