@@ -55,6 +55,7 @@ const Rekrutmen: NextPage = () => {
       <SEO
         title="Rekrutmen Pengurus HMJ TEP UM 2022"
         description={selayangpandang}
+        image="https://hmj.tep.my.id/og-rekrutmen.png"
       />
       <Header title="Rekrutmen Pengurus" />
       <div className="min-h-full flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
