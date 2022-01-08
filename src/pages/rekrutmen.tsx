@@ -154,7 +154,7 @@ const Rekrutmen: NextPage = () => {
             </h2>
             <ul className="mt-2 mx-4 text-sm list-disc text-gray-600">
               <li>
-                <b>07 - 14 Januari</b> : Pengambilan dan pengembalian formulir
+                <b>8 - 14 Januari</b> : Pengambilan dan pengembalian formulir
               </li>
               <li>
                 <b>15 - 17 Januari</b> : Tes Wawancara

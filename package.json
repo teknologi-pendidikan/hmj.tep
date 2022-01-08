@@ -21,8 +21,8 @@
     "prepare": "husky install",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
-    "e2e": "start-server-and-test start http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+    "e2e": "yarn build && start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "yarn build && start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "next": "12.0.7",
