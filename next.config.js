@@ -2,10 +2,10 @@
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' *.netlify.com *.googletagmanager.com analytics.google.com;
   img-src 'self' blob: data: https:;
   style-src 'self' 'unsafe-inline';
-  connect-src 'self';
+  connect-src 'self' www.google-analytics.com analytics.google.com stats.g.doubleclick.net;
   object-src 'none';
   frame-src 'none';
 `;
@@ -37,7 +37,7 @@ securityHeader = [
   },
   {
     key: "Referrer-Policy",
-    value: "origin-when-cross-origin",
+    value: "strict-origin-when-cross-origin",
   },
   {
     key: "Content-Security-Policy",
