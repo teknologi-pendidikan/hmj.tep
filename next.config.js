@@ -58,4 +58,9 @@ module.exports = {
   images: {
     domains: ["www.netlify.com"],
   },
+  i18n: {
+    locales: ["id"],
+    defaultLocale: "id",
+    ignoreRoutes: ["/404", "/_app", "/_error"],
+  },
 };
