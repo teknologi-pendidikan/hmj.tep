@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  console.info(
-    "==============================\nHMJ Teknologi Pendidikan UM\n==============================\nSistem Portal Informasi Terpadu\nGithub: gh://teknologi-pendidikan\nCreator: gh://vzrenggamani\n\nBugs or Vulnerability Reportings to:\nconcern@tep.my.id\n==============================\n"
-  );
+  // console.info(
+  //   "==============================\nHMJ Teknologi Pendidikan UM\n==============================\nSistem Portal Informasi Terpadu\nGithub: gh://teknologi-pendidikan\nCreator: gh://vzrenggamani\n\nBugs or Vulnerability Reportings to:\nconcern@tep.my.id\n==============================\n"
+  // );
 
   return (
     <>

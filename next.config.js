@@ -7,7 +7,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   connect-src 'self' www.google-analytics.com analytics.google.com stats.g.doubleclick.net;
   object-src 'none';
-  frame-src 'none';
+  frame-src https://calendar.google.com;
 `;
 
 securityHeader = [
