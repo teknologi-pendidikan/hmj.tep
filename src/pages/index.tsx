@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import {
   Header,
@@ -65,16 +65,18 @@ function Home({
         image=""
       />
       <Header title="Beranda" />
-      <PageTitle
-        title="Open Gate HMJ TEP UM"
-        description="Pusat Informasi terpadu HMJ Teknologi Pendidikan UM 2022."
-      />
-      <SectionGrub title="Pinned Post">
-        <ul>{pinnedPost}</ul>
-      </SectionGrub>
-      <SectionGrub title="Quick Links">
-        <ul>{bunchOfLink}</ul>
-      </SectionGrub>
+      <main className="container mx-auto px-4">
+        <PageTitle
+          title="Open Gate HMJ TEP UM"
+          description="Pusat Informasi terpadu HMJ Teknologi Pendidikan UM 2022."
+        />
+        <SectionGrub title="Pinned Post">
+          <ul>{pinnedPost}</ul>
+        </SectionGrub>
+        <SectionGrub title="Quick Links">
+          <ul>{bunchOfLink}</ul>
+        </SectionGrub>
+      </main>
       <Footer />
     </>
   );

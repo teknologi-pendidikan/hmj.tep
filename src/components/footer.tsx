@@ -8,11 +8,6 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-4 text-center">
         <h2 className="flex justify-center font-bold text-lg">hmj.tep.my.id</h2>
         <p>Open Gate System HMJ TEP UM 2022</p>
-        <Link href="/rekrutmen" passHref>
-          <p className="flex justify-center font-bold active:underline hover:underline">
-            Gabung HMJ TEP UM 2022
-          </p>
-        </Link>
         <a title="Netlify Sponsor" href="https://www.netlify.com">
           <Image
             src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
