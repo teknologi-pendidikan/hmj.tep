@@ -2,12 +2,11 @@
 export default function Header({ title }): JSX.Element {
   return (
     <>
-      <div
-        id="nav"
-        className="bg-neutral-800 py-4 px-8 flex gap-4 items-center sticky"
-      >
-        <p className="text-xl text-neutral-200">{title}</p>
-      </div>
+      <header className="flex items-center justify-center fixed w-full h-16 z-40 bg-brand-100 shadow-md">
+        <div className="w-full sm:max-w-xl mx-auto flex items-center justify-between h-full px-4">
+          <p className="text-xl text-neutral-200">{title}</p>
+        </div>
+      </header>
     </>
   );
 }

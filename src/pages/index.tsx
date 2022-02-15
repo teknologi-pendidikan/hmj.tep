@@ -8,6 +8,9 @@ import {
   PageTitle,
   CardInformasi,
   SectionGrub,
+  IndexHeader,
+  IndexSosmed,
+  CardLinks,
 } from "components";
 
 type sosmedLinks = {
@@ -37,7 +40,7 @@ function Home({
 
   for (let i = 0; i < data.length; i += 1) {
     bunchOfLink.push(
-      <CardInformasi
+      <CardLinks
         key={i}
         title={data[i].title}
         description={data[i].description}
@@ -58,27 +61,30 @@ function Home({
   }
 
   return (
-    <>
+    <main className="flex flex-col w-full min-h-screen bg-neutral-100">
       <SEO
         title="Open Gate HMH TEP UM"
-        description="Pusat Informasi terpadu HMJ Teknologi Pendidikan UM 2022."
+        description="Pusat Informasi terpadu HMD Teknologi Pendidikan UM 2022."
         image=""
       />
       <Header title="Beranda" />
-      <main className="container mx-auto px-4">
+      <section className="flex flex-col flex-1 py-16">
         <PageTitle
-          title="Open Gate HMJ TEP UM"
-          description="Pusat Informasi terpadu HMJ Teknologi Pendidikan UM 2022."
+          title="Sistem Informasi HMD TEP UM"
+          description="Pusat Informasi terpadu HMD Teknologi Pendidikan UM 2022."
         />
-        <SectionGrub title="Pinned Post">
-          <ul>{pinnedPost}</ul>
-        </SectionGrub>
-        <SectionGrub title="Quick Links">
-          <ul>{bunchOfLink}</ul>
-        </SectionGrub>
-      </main>
+        <div className="flex-1">
+          <div className="w-full sm:max-w-xl mx-auto space-y-3">
+            <IndexHeader>
+              <IndexSosmed />
+            </IndexHeader>
+            <SectionGrub title="Pengumuman Penting">{pinnedPost}</SectionGrub>
+            <SectionGrub title="Tautan Cepat">{bunchOfLink}</SectionGrub>
+          </div>
+        </div>
+      </section>
       <Footer />
-    </>
+    </main>
   );
 }
 

@@ -8,9 +8,9 @@ export default function SectionGrub(
   Props: PropsWithChildren<Props>
 ): JSX.Element {
   return (
-    <div className="px-4 pb-8">
-      <h2 className="text-2xl font-bold">{Props.title}</h2>
+    <section className="bg-white overflow-hidden px-4 py-6 space-y-4">
+      <h2 className="text-2xl sm:text-xl font-bold">{Props.title}</h2>
       {Props.children}
-    </div>
+    </section>
   );
 }
