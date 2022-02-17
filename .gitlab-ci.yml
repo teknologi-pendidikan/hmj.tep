@@ -1,8 +1,35 @@
 image: node:current-alpine
 
-deploy:
+stages:
+  - linting
+  - build
+  - test
+  - deploy
+
+linting:
+  stage: linting
   script:
-    - apk add lftp
     - yarn install
+    - yarn lint:full
+
+build:
+  stage: build
+  needs:
+    - linting
+  script:
     - yarn export
+
+test:
+  stage: test
+  needs:
+    - test
+  script:
+    - yarn test
+
+deploy:
+  stage: deploy
+  needs:
+    - test
+  script:
+    - add apk lftp
     - lftp -e "open $FTP_HOST:$FTP_PORT; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete out/ sistem-informasi/; bye"
