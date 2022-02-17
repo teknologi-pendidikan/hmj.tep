@@ -22,7 +22,7 @@ build:
 test:
   stage: test
   needs:
-    - test
+    - build
   script:
     - yarn test
 
