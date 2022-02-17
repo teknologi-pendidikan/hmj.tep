@@ -1,0 +1,6 @@
+deploy:
+  script:
+    - apt-get update -qq && apt-get install -y -qq lftp
+    - yarn install
+    - yarn export
+    - lftp -e "open ftp.mywebhost.com; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete out/ sistem-informasi/; bye"
