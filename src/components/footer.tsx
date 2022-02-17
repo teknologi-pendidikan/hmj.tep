@@ -1,6 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
-
+/* eslint-disable @next/next/no-img-element */
 export default function Footer() {
   return (
     <footer id="footer" className="pb-28">
@@ -8,7 +6,7 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-4 text-center">
         <p>Sistem Informasi Utama HMD TEP UM</p>
         <a title="Netlify Sponsor" href="https://www.netlify.com">
-          <Image
+          <img
             src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
             alt=""
             width="114"

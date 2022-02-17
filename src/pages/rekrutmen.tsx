@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
-import Image from "next/image";
 import Footer from "components/footer";
 import Header from "components/header";
 import SEO from "components/seo";
@@ -61,14 +60,6 @@ const Rekrutmen: NextPage = () => {
       <div className="min-h-full flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl w-full space-y-8">
           <div>
-            <Image
-              src={"/banner-atas.png"}
-              alt="banner"
-              layout="responsive"
-              className="mb-4"
-              width={300}
-              height={100}
-            />
             <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Rekrutmen HMJ TEP UM
             </h1>

@@ -46,6 +46,8 @@ securityHeader = [
 ];
 
 module.exports = {
+  basepath: "/sistem-informasi",
+  assetPrefix: "/sistem-informasi/",
   reactStrictMode: true,
   headers: async () => {
     return [
@@ -54,13 +56,5 @@ module.exports = {
         headers: securityHeader,
       },
     ];
-  },
-  images: {
-    domains: ["www.netlify.com"],
-  },
-  i18n: {
-    locales: ["id"],
-    defaultLocale: "id",
-    ignoreRoutes: ["/404", "/_app", "/_error"],
   },
 };
