@@ -1,8 +1,8 @@
-image: alpine
+image: node:current-alpine
 
 deploy:
   script:
-    - apt-get update -qq && apt-get install -y -qq lftp
+    - apk add lftp
     - yarn install
     - yarn export
     - lftp -e "open $FTP_HOST:$FTP_PORT; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete out/ sistem-informasi/; bye"
