@@ -46,8 +46,8 @@ securityHeader = [
 ];
 
 module.exports = {
-  basepath: "/sistem-informasi",
-  assetPrefix: "/sistem-informasi/",
+  basepath: process.env.BASE_PATH || "",
+  assetPrefix: process.env.BASE_PATH || "",
   reactStrictMode: true,
   headers: async () => {
     return [
