@@ -8,7 +8,7 @@ deploy:
   script:
     - yarn install
     - yarn lint:full
-    - yarn test
+    - yarn tsc
     - yarn export
     - add apk lftp
     - lftp -e "open $FTP_HOST:$FTP_PORT; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete out/ sistem-informasi/; bye"
