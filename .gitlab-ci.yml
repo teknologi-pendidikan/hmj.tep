@@ -3,8 +3,8 @@ image: node:current-alpine
 stages:
   - install
   - linting
-  - build
   - test
+  - build
   - deploy
 
 install:
@@ -37,6 +37,7 @@ build:
   needs:
     - linting
     - test
+    - install
   script:
     - yarn export
 
