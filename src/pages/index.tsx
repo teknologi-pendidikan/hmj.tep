@@ -10,7 +10,6 @@ import {
   SectionGrub,
   IndexHeader,
   IndexSosmed,
-  CardLinks,
 } from "components";
 
 type sosmedLinks = {
@@ -21,33 +20,16 @@ type sosmedLinks = {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data: sosmedLinks = require("data/links.json");
   const pinnedposts: sosmedLinks = require("data/pinnedpost.json");
   return {
     props: {
-      data,
       pinnedposts,
     },
   };
 };
 
-function Home({
-  data,
-  pinnedposts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  const bunchOfLink = [];
+function Home({ pinnedposts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const pinnedPost = [];
-
-  for (let i = 0; i < data.length; i += 1) {
-    bunchOfLink.push(
-      <CardLinks
-        key={i}
-        title={data[i].title}
-        description={data[i].description}
-        links={data[i].link}
-      />
-    );
-  }
 
   for (let i = 0; i < pinnedposts.length; i += 1) {
     pinnedPost.push(
@@ -79,7 +61,6 @@ function Home({
               <IndexSosmed />
             </IndexHeader>
             <SectionGrub title="Pengumuman Penting">{pinnedPost}</SectionGrub>
-            <SectionGrub title="Tautan Cepat">{bunchOfLink}</SectionGrub>
           </div>
         </div>
       </section>
