@@ -18,26 +18,26 @@ type informasiberkas = {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const daftarberkas: informasiberkas = require("data/berkas.json");
+  const daftarprogram: informasiberkas = require("data/program.json");
   return {
     props: {
-      daftarberkas,
+      daftarprogram,
     },
   };
 };
 
 function Home({
-  daftarberkas,
+  daftarprogram,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const pinnedPost = [];
 
-  for (let i = 0; i < daftarberkas.length; i += 1) {
+  for (let i = 0; i < daftarprogram.length; i += 1) {
     pinnedPost.push(
       <CardLinks
         key={i}
-        title={daftarberkas[i].nama}
-        description={daftarberkas[i].jenis}
-        links={daftarberkas[i].tautan}
+        title={daftarprogram[i].nama}
+        description={daftarprogram[i].deskripsi}
+        links="#"
       />
     );
   }
@@ -49,7 +49,7 @@ function Home({
         description="Admins Access Sistem Informasi Utama"
         image=""
       />
-      <Header title="Akses Admin Berkas" />
+      <Header title="Data Program Kerja Agenda" />
       <section className="flex flex-col flex-1 py-16">
         <PageTitle
           title="Akses Administrator Sistem Informasi"
@@ -57,7 +57,7 @@ function Home({
         />
         <div className="flex-1">
           <div className="w-full sm:max-w-xl mx-auto space-y-3">
-            <SectionGrub title="Daftar Berkas Penting">
+            <SectionGrub title="Daftar Program kerja agenda">
               {pinnedPost}
             </SectionGrub>
           </div>

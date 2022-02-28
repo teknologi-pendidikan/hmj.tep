@@ -7,6 +7,7 @@ import SectionGrub from "./section";
 import IndexHeader from "./page/index-header";
 import IndexSosmed from "./page/index-sosmed";
 import CardLinks from "./cardLinks";
+import Navigation from "./navigation";
 
 export {
   Footer,
@@ -18,4 +19,5 @@ export {
   IndexHeader,
   IndexSosmed,
   CardLinks,
+  Navigation,
 };

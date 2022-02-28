@@ -4,6 +4,7 @@ import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
+import { Navigation } from "components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />;
+      <Navigation />
     </>
   );
 }

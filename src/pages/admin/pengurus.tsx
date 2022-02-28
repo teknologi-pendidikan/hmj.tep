@@ -18,26 +18,28 @@ type informasiberkas = {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const daftarberkas: informasiberkas = require("data/berkas.json");
+  const daftarpengurus: informasiberkas = require("data/pengurus.json");
   return {
     props: {
-      daftarberkas,
+      daftarpengurus,
     },
   };
 };
 
 function Home({
-  daftarberkas,
+  daftarpengurus,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const pinnedPost = [];
 
-  for (let i = 0; i < daftarberkas.length; i += 1) {
+  for (let i = 0; i < daftarpengurus.length; i += 1) {
+    const desc = `${daftarpengurus[i].grub} | ${daftarpengurus[i].divisi}`;
+    const link = `mailto: ${daftarpengurus[i].email}`;
     pinnedPost.push(
       <CardLinks
-        key={i}
-        title={daftarberkas[i].nama}
-        description={daftarberkas[i].jenis}
-        links={daftarberkas[i].tautan}
+        key={daftarpengurus[i].nim}
+        title={daftarpengurus[i].nama}
+        description={desc}
+        links={link}
       />
     );
   }
@@ -49,7 +51,7 @@ function Home({
         description="Admins Access Sistem Informasi Utama"
         image=""
       />
-      <Header title="Akses Admin Berkas" />
+      <Header title="Akses Daftar Pengurus" />
       <section className="flex flex-col flex-1 py-16">
         <PageTitle
           title="Akses Administrator Sistem Informasi"
@@ -57,9 +59,7 @@ function Home({
         />
         <div className="flex-1">
           <div className="w-full sm:max-w-xl mx-auto space-y-3">
-            <SectionGrub title="Daftar Berkas Penting">
-              {pinnedPost}
-            </SectionGrub>
+            <SectionGrub title="Daftar Pengurus">{pinnedPost}</SectionGrub>
           </div>
         </div>
       </section>
