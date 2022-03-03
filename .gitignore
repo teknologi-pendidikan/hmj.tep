@@ -36,3 +36,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Local Netlify folder
+.netlify
+
+# Data Folder
+berkas.json
+program.json
+pengurus.json
+eoffice-keluar.json
