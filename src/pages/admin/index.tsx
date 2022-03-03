@@ -12,10 +12,20 @@ import {
 
 const berkas = [
   {
-    id: 1,
     title: "Daftar Berkas Utama",
     description: "Daftar Berkas",
     link: "/admin/berkas",
+  },
+  {
+    title: "Pelaporan Kinerja Agenda ",
+    description:
+      "Panduan, Template dan unggah berkas pelaporan kinerja agenda divisi",
+    link: "/admin/laporan-agenda",
+  },
+  {
+    title: "Daftar Surat Keluar ",
+    description: "Daftar surat keluar HMD TEP UM",
+    link: "/admin/eoffice-keluar",
   },
 ];
 
