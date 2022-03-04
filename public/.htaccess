@@ -1,0 +1,4 @@
+<Directory  ~ "\admin">
+Order allow,deny
+Deny from all
+</Directory>
