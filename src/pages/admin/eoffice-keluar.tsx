@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import useSWR from "swr";
 
 import {
   Header,
@@ -10,33 +9,43 @@ import {
   SectionGrub,
 } from "components";
 
-type informasiberkas = {
-  id: number;
-  title: string;
-  description: string;
-  link: string;
-};
+function GetDataSuratKeluar() {
+  const fetcher = (url: RequestInfo) =>
+    fetch(url, { mode: "cors" }).then((r) => r.json());
+  const { data, error } = useSWR(
+    "https://hmdtep-api.azurewebsites.net/api/data/eofficekeluar",
+    fetcher
+  );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const suratkeluar: informasiberkas = require("data/eoffice-keluar.json");
-  return {
-    props: {
-      suratkeluar,
-    },
-  };
-};
+  if (error)
+    return {
+      title: "Data gagal untuk dimuat",
+      description: "Data gagal untuk dimuat",
+      link: "#",
+    };
 
-function Home({ suratkeluar }: InferGetStaticPropsType<typeof getStaticProps>) {
+  if (!data)
+    return {
+      title: "Data sedang dimuat",
+      description: "Data sedang dimuat",
+      link: "#",
+    };
+
+  return data;
+}
+
+function Home() {
+  const LogSurat = GetDataSuratKeluar();
   const pinnedPost = [];
 
-  for (let i = 0; i < suratkeluar.length; i += 1) {
-    const desc = `${suratkeluar[i].kepada} | ${suratkeluar[i].keluar} | ${suratkeluar[i].nomor}`;
+  for (let i = 0; i < LogSurat.length; i += 1) {
+    const desc = `${LogSurat[i].kepada} | ${LogSurat[i].keluar} | ${LogSurat[i].nomor}`;
     pinnedPost.push(
       <CardLinks
-        key={suratkeluar[i].nomor}
-        title={suratkeluar[i].hal}
+        key={LogSurat[i].nomor}
+        title={LogSurat[i].hal}
         description={desc}
-        links={suratkeluar[i].softcopy}
+        links={LogSurat[i].softcopy}
       />
     );
   }

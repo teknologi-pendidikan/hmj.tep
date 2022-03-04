@@ -5,7 +5,7 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.netlify.com *.googletagmanager.com analytics.google.com;
   img-src 'self' blob: data: https:;
   style-src 'self' 'unsafe-inline';
-  connect-src 'self' www.google-analytics.com analytics.google.com stats.g.doubleclick.net;
+  connect-src 'self' www.google-analytics.com analytics.google.com stats.g.doubleclick.net api.hmj.tep.my.id hmdtep-api.azurewebsites.net;
   object-src 'none';
   frame-src https://calendar.google.com https://docs.google.com https://www.openstreetmap.org;
 `;

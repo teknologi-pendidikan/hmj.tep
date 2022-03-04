@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import useSWR from "swr";
 
 import {
   Header,
@@ -10,25 +10,33 @@ import {
   SectionGrub,
 } from "components";
 
-type informasiberkas = {
-  id: number;
-  title: string;
-  description: string;
-  link: string;
-};
+function GetDataBerkas() {
+  const fetcher = (url: RequestInfo) =>
+    fetch(url, { mode: "cors" }).then((r) => r.json());
+  const { data, error } = useSWR(
+    "https://hmdtep-api.azurewebsites.net/api/data/berkas",
+    fetcher
+  );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const daftarberkas: informasiberkas = require("data/berkas.json");
-  return {
-    props: {
-      daftarberkas,
-    },
-  };
-};
+  if (error)
+    return {
+      title: "Data gagal untuk dimuat",
+      description: "Data gagal untuk dimuat",
+      link: "#",
+    };
 
-function Home({
-  daftarberkas,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+  if (!data)
+    return {
+      title: "Data sedang dimuat",
+      description: "Data sedang dimuat",
+      link: "#",
+    };
+
+  return data;
+}
+
+function Home() {
+  const daftarberkas = GetDataBerkas();
   const pinnedPost = [];
 
   for (let i = 0; i < daftarberkas.length; i += 1) {
