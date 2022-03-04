@@ -12,7 +12,7 @@ export default function CardInformasi(
 ): JSX.Element {
   return (
     <Link href={`${Props.links}`} passHref>
-      <article className="border border-gray-200 rounded-md p-4 space-y-4">
+      <article className="border border-gray-200 rounded-md p-4 space-y-4 hover:border-brand-100 hover:cursor-pointer">
         <div className="space-y-2">
           <div className="flex flex-row text-base">
             <h3 className="flex-1 font-semibold text-gray-700 truncate">

@@ -12,12 +12,10 @@ export default function CardLinks(
 ): JSX.Element {
   return (
     <Link href={`${Props.links}`} passHref>
-      <article className="border border-gray-200 rounded-md p-4 space-y-4">
+      <article className="border border-gray-200 rounded-md p-4 space-y-4 hover:border-brand-100 hover:border-2 hover:cursor-pointer">
         <div className="space-y-2">
           <div className="flex flex-row text-base">
-            <h3 className="flex-1 font-semibold text-gray-700 truncate">
-              {Props.title}
-            </h3>
+            <h3 className="flex-1 font-semibold truncate">{Props.title}</h3>
           </div>
           <div className="text-gray-600 text-sm">
             <p>{Props.description}</p>

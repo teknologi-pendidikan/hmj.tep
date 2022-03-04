@@ -10,7 +10,7 @@ const laporanAgenda: NextPage = () => {
         image=""
       />
       <Header title="Pelaporan Agenda" />
-      <div className="flex flex-col flex-1 py-16">
+      <div className="flex flex-col flex-1 py-16 w-full sm:max-w-xl mx-auto">
         <PageTitle
           title="Tatacara pelaporan hasil agenda"
           description="Halaman ini berisi panduan serta template berkas pelaporan kinerja agenda yang telah dilaksanakan oleh masih - masing divisi"
