@@ -37,7 +37,7 @@ const laporanAgenda: NextPage = () => {
             <div className="px-4 pb-6 text-center">
               <a
                 className="bg-brand-100 flex flex-row px-4 py-2 text-base items-center justify-center border border-transparent font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white hover:bg-neutral-600 focus:ring-neutral-500 disabled:cursor-not-allowed disabled:opacity-75"
-                href="https://docs.google.com/document/d/1GWY3dUyq2uA2sKJeJAIE0_MZ3ve8GKSf/edit?usp=sharing&ouid=103885318911030508624&rtpof=true&sd=true"
+                href="https://docs.google.com/document/d/1J-CiEPG4lWHGlkG7Edimw7LnrJFBdfmJ?rtpof=true&authuser=rengga.prakoso.2001216%40students.um.ac.id&usp=drive_fs"
               >
                 Unduh Template Laporan Kinerja Agenda
               </a>
