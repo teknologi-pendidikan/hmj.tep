@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sistem Informasi HMD TEP UM
+
+![Banner Profile](https://repository-images.githubusercontent.com/444730918/21db966a-2e7e-4f2c-8ca8-44bd64a980dd)
+
+Sistem informasi ini dibuat untuk memudahkan para pengurus maupun anggota dalam mengakses data atau layanan yang dikembangkan oleh tim HMD TEP UM. Seluruh layanan ini dibuat secara terbuka dan dapat diakses oleh siapa saja yang memiliki akses ke jaringan Universitas Negeri Malang. Seluruh layanan ini dapat diakses menggunakan akun UM (SSO) yang ditandai dengan akhiran email [@]students.um.ac.id
+
+Kunjungi [laman sistem informasi](https://hmj.tep.my.id)
 
 ## Getting Started
 
-First, run the development server:
+To get started running the project locally, please follow the steps below.
+
+First, clone the repository.
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/teknologi-pendidikan/hmj.tep.git
+```
+
+Then, install dependencies and fetch data to your local machine. Note that we use Yarn, not npm.
+
+```bash
+cd hmj.tep
+yarn install
+```
+
+Finally, run the development server.
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Technical Details
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The project is built with [NextJS](https://nextjs.org//) and [Tailwind CSS](https://tailwindcss.com/).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Project Dependencies and Environment:
 
-## Learn More
+- [Node.js v14.x](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
+- [Netlify](https://www.netlify.com/)
+- [Git](https://git-scm.com/)
 
-To learn more about Next.js, take a look at the following resources:
+Any contributions are welcome. Please read the [contributing](contributing.md) file for more information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com)
