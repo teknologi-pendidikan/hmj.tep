@@ -150,7 +150,7 @@ export default function IndexSosmed(): JSX.Element {
                 <h3 className="text-base leading-5 font-semibold">
                   <a
                     className="helper-link-cover"
-                    href="https://wa.me/6285225260782"
+                    href="https://wa.me/6281335835642"
                   >
                     TEP HELP CENTER
                   </a>
